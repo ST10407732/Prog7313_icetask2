@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "865526854463",
+    "project_id": "firebasics-3e51d",
+    "storage_bucket": "firebasics-3e51d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:865526854463:android:1c18bb873d5a35c291598a",
+        "android_client_info": {
+          "package_name": "vcmsa.projects.firebasics"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJAReIEvrvbCIbznAHSboRgVLXsK5sINs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:865526854463:android:9776dd3b0f0a6ad491598a",
+        "android_client_info": {
+          "package_name": "vcmsa.projects.icetask"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJAReIEvrvbCIbznAHSboRgVLXsK5sINs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
