@@ -1,6 +1,5 @@
 package vcmsa.projects.icetask
 
-
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -13,34 +12,28 @@ class RegisterActivity : AppCompatActivity() {
     private lateinit var etEmail: EditText
     private lateinit var etPassword: EditText
     private lateinit var btnRegister: Button
-    private lateinit var btnLoginPage: Button
     private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
+        // Initialize FirebaseAuth
         auth = FirebaseAuth.getInstance()
 
         etEmail = findViewById(R.id.etEmail)
         etPassword = findViewById(R.id.etPassword)
         btnRegister = findViewById(R.id.btnRegister)
-        btnLoginPage = findViewById(R.id.btnLoginPage)
 
         btnRegister.setOnClickListener {
             val email = etEmail.text.toString().trim()
             val password = etPassword.text.toString().trim()
 
-            if (email.isNotEmpty() && password.length >= 6) {
+            if (email.isNotEmpty() && password.isNotEmpty()) {
                 registerUser(email, password)
             } else {
-                Toast.makeText(this, "Invalid email or password too short", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Please enter email and password", Toast.LENGTH_SHORT).show()
             }
-        }
-
-        btnLoginPage.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
         }
     }
 
@@ -48,8 +41,8 @@ class RegisterActivity : AppCompatActivity() {
         auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    Toast.makeText(this, "Registration successful!", Toast.LENGTH_SHORT).show()
-                    startActivity(Intent(this, MainActivity::class.java))
+                    Toast.makeText(this, "Welcome to IceTask! Please log in.", Toast.LENGTH_LONG).show()
+                    startActivity(Intent(this, LoginActivity::class.java)) // Navigate to LoginActivity
                     finish()
                 } else {
                     Toast.makeText(this, "Registration failed: ${task.exception?.message}", Toast.LENGTH_SHORT).show()

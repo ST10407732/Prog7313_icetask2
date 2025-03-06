@@ -24,9 +24,13 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // Initialize Firebase (This should be done only once in the Application class)
-        FirebaseApp.initializeApp(this)
+        //FirebaseApp.initializeApp(this)
 
+        enableEdgeToEdge()
+        setContentView(R.layout.activity_main)
+
+        // Initialize Firebase Auth
+    //    auth = FirebaseAuth.getInstance()
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
@@ -37,7 +41,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         // Initialize Firebase Auth
-        auth = FirebaseAuth.getInstance()
+        //auth = FirebaseAuth.getInstance()
 
         etEmail = findViewById(R.id.etEmail)
         etPassword = findViewById(R.id.etPassword)

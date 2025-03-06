@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    namespace = "vcmsa.projects.mykotlinapp"
+    namespace = "vcmsa.projects.icetask"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "vcmsa.projects.mykotlinapp"
+        applicationId = "vcmsa.projects.icetask"
         minSdk = 32
         targetSdk = 35
         versionCode = 1
@@ -48,6 +48,7 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
+    implementation(libs.firebase.auth.ktx)
     // Firebase BoM (manages Firebase versions automatically)
     implementation(platform("com.google.firebase:firebase-bom:33.10.0"))
 
